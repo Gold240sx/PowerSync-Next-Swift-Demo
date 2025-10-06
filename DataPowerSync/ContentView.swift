@@ -5,62 +5,109 @@
 //  Created by Michael Martell on 10/5/25.
 //
 
+import Foundation
 import SwiftUI
 import SwiftData
+import PowerSync
+
+
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @State var counters: [CounterRecord] = []
+    let userID = UUID().uuidString
+    
+    let powerSync = PowerSyncDatabase(
+        schema: powerSyncSchema,
+        dbFilename: "my-demo.sqlite"
+      )
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        VStack {
+            List(counters) { counter in
+                CounterRecordView(
+                    counter: counter,
+                    onIncrement: {
+                        Task {
+                            do {
+                                print("increment")
+                                try await powerSync.execute(
+                                    sql: """
+                                        UPDATE counters
+                                        SET count = count + 1
+                                        WHERE id = ?
+                                        """,
+                                    parameters: [counter.id]
+                                )
+                            } catch {
+                                print( "Could not create a counter: \(error)")
+                            }
+                        }
+                    },
+                    onDelete: {
+                        Task {
+                            do {
+                                print("delete")
+                                try await powerSync.execute(
+                                    sql: """
+                                        DELETE FROM counters
+                                        WHERE id = ?
+                                        """,
+                                    parameters: [counter.id]
+                                )
+                            } catch {
+                                print( "Could not create a counter: \(error)")
+                            }
+                        }
+                    }
+                )
+            }
+            Button {
+                Task {
+                    // asyncronous and can handle exceptions (so wrap in do / catch block)
+                    do {
+                        try await powerSync.execute(
+                            sql: """
+                                INSERT INTO counters(id, count, owner_id, created_at)
+                                VALUES(uuid(), 0, ?, strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
+                                """,
+                            parameters: [userID]
+                        )
+                    } catch {
+                        print( "Could not create a counter: \(error)")
                     }
                 }
-                .onDelete(perform: deleteItems)
+            } label: {
+                Text("Add Counter")
             }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+        }.task {
+            do {
+                // map over all counters
+                for try await results in try powerSync.watch(
+                    options: WatchOptions(
+                        sql: "SELECT * FROM counters ORDER BY created_at",
+                        parameters: []
+                    ) { cursor in
+                        try CounterRecord(
+                            id: cursor.getString(name: "id"),
+                            count: cursor.getInt(name: "count"),
+                            ownerId: cursor.getString(name: "owner_id"),
+                            createdAt: ISO8601DateFormatter().date(
+                                from: cursor.getString(name: "created_at")
+                            ) ?? Date()
+                        )
                     }
+                ) {
+                    // for loop ending
+                    counters = results
                 }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            } catch {
+                print("Could not watch counters: \(error)")
             }
         }
+        .padding()
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

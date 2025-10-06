@@ -1,0 +1,1 @@
+# PowerSync-Next-Swift-Demo
