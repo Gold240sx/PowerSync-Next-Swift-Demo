@@ -23,18 +23,18 @@ struct CounterRecordView: View {
                     onIncrement()
                 } label: {
                     Image(systemName: "plus")
-                }
+                }.buttonStyle(.plain)
                 Button {
                     onDelete()
                 } label: {
-                    Image(systemName: "trash")
-                }
+                    Image(systemName: "trash.fill")
+                }.buttonStyle(.plain)
             }
             
             HStack {
-                Text("Created At: \(counter.createdAt, formatter: DateFormatter())")
+                Text("Created At: \(counter.createdAt.ISO8601Format())")
                 Spacer()
-                Text("Owner ID: \(counter.ownerId)")
+                Text("Owner ID: \(counter.ownerId ?? "-")")
             }
         }
     }
@@ -45,7 +45,7 @@ struct CounterRecordView: View {
     CounterRecordView(
         counter: CounterRecord(
             id: UUID().uuidString,
-            count: 900,
+            count: 0,
             ownerId: UUID().uuidString,
             createdAt: Date()
         ),

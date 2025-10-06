@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E62D6A1D2E93938800037C11 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = E62D6A1C2E93938800037C11 /* Auth */; };
+		E62D6A1F2E93938800037C11 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = E62D6A1E2E93938800037C11 /* Supabase */; };
 		E66EF9CB2E9382B30014D50E /* PowerSyncDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E66EF9CA2E9382B30014D50E /* PowerSyncDynamic */; };
 		E66EF9CC2E9382DB0014D50E /* PowerSyncDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E66EF9CA2E9382B30014D50E /* PowerSyncDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -26,26 +28,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E66EF9B62E9382420014D50E /* DataPowerSyncDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataPowerSyncDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E66EF9B62E9382420014D50E /* DataPowerSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataPowerSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E66EF9C32E9382440014D50E /* Exceptions for "DataPowerSyncDesktop" folder in "DataPowerSyncDesktop" target */ = {
+		E66EF9C32E9382440014D50E /* Exceptions for "DataPowerSync" folder in "DataPowerSync" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = E66EF9B52E9382420014D50E /* DataPowerSyncDesktop */;
+			target = E66EF9B52E9382420014D50E /* DataPowerSync */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E66EF9B82E9382420014D50E /* DataPowerSyncDesktop */ = {
+		E66EF9B82E9382420014D50E /* DataPowerSync */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E66EF9C32E9382440014D50E /* Exceptions for "DataPowerSyncDesktop" folder in "DataPowerSyncDesktop" target */,
+				E66EF9C32E9382440014D50E /* Exceptions for "DataPowerSync" folder in "DataPowerSync" target */,
 			);
-			path = DataPowerSyncDesktop;
+			path = DataPowerSync;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -55,7 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62D6A1D2E93938800037C11 /* Auth in Frameworks */,
 				E66EF9CB2E9382B30014D50E /* PowerSyncDynamic in Frameworks */,
+				E62D6A1F2E93938800037C11 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +69,7 @@
 		E66EF9AD2E9382420014D50E = {
 			isa = PBXGroup;
 			children = (
-				E66EF9B82E9382420014D50E /* DataPowerSyncDesktop */,
+				E66EF9B82E9382420014D50E /* DataPowerSync */,
 				E66EF9B72E9382420014D50E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +77,7 @@
 		E66EF9B72E9382420014D50E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E66EF9B62E9382420014D50E /* DataPowerSyncDesktop.app */,
+				E66EF9B62E9382420014D50E /* DataPowerSync.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,9 +85,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E66EF9B52E9382420014D50E /* DataPowerSyncDesktop */ = {
+		E66EF9B52E9382420014D50E /* DataPowerSync */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E66EF9C42E9382440014D50E /* Build configuration list for PBXNativeTarget "DataPowerSyncDesktop" */;
+			buildConfigurationList = E66EF9C42E9382440014D50E /* Build configuration list for PBXNativeTarget "DataPowerSync" */;
 			buildPhases = (
 				E66EF9B22E9382420014D50E /* Sources */,
 				E66EF9B32E9382420014D50E /* Frameworks */,
@@ -95,14 +99,16 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E66EF9B82E9382420014D50E /* DataPowerSyncDesktop */,
+				E66EF9B82E9382420014D50E /* DataPowerSync */,
 			);
-			name = DataPowerSyncDesktop;
+			name = DataPowerSync;
 			packageProductDependencies = (
 				E66EF9CA2E9382B30014D50E /* PowerSyncDynamic */,
+				E62D6A1C2E93938800037C11 /* Auth */,
+				E62D6A1E2E93938800037C11 /* Supabase */,
 			);
 			productName = DataPowerSync;
-			productReference = E66EF9B62E9382420014D50E /* DataPowerSyncDesktop.app */;
+			productReference = E66EF9B62E9382420014D50E /* DataPowerSync.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -120,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E66EF9B12E9382420014D50E /* Build configuration list for PBXProject "DataPowerSyncDesktop" */;
+			buildConfigurationList = E66EF9B12E9382420014D50E /* Build configuration list for PBXProject "DataPowerSync" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -131,13 +137,14 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E66EF9C92E9382B30014D50E /* XCRemoteSwiftPackageReference "powersync-swift" */,
+				E62D6A1B2E93938800037C11 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E66EF9B72E9382420014D50E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E66EF9B52E9382420014D50E /* DataPowerSyncDesktop */,
+				E66EF9B52E9382420014D50E /* DataPowerSync */,
 			);
 		};
 /* End PBXProject section */
@@ -362,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E66EF9B12E9382420014D50E /* Build configuration list for PBXProject "DataPowerSyncDesktop" */ = {
+		E66EF9B12E9382420014D50E /* Build configuration list for PBXProject "DataPowerSync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E66EF9C72E9382440014D50E /* Debug */,
@@ -371,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E66EF9C42E9382440014D50E /* Build configuration list for PBXNativeTarget "DataPowerSyncDesktop" */ = {
+		E66EF9C42E9382440014D50E /* Build configuration list for PBXNativeTarget "DataPowerSync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E66EF9C52E9382440014D50E /* Debug */,
@@ -383,6 +390,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E62D6A1B2E93938800037C11 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
 		E66EF9C92E9382B30014D50E /* XCRemoteSwiftPackageReference "powersync-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/powersync-ja/powersync-swift.git";
@@ -394,6 +409,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E62D6A1C2E93938800037C11 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E62D6A1B2E93938800037C11 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		E62D6A1E2E93938800037C11 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E62D6A1B2E93938800037C11 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
 		E66EF9CA2E9382B30014D50E /* PowerSyncDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E66EF9C92E9382B30014D50E /* XCRemoteSwiftPackageReference "powersync-swift" */;
