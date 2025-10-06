@@ -1,0 +1,12 @@
+.env
+
+// -- ENV VARIABLES --
+
+// MOBILE
+DataPowerSyncDesktop/.env
+DataPowerSyncDesktop/Info.plist
+// WEB
+data-power-sync-web/.env
+data-power-sync-web/node-modules
+
+

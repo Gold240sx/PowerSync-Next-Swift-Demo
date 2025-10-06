@@ -1,0 +1,9 @@
+//
+//  BuildSetttings.xcconfig
+//  DataPowerSync
+//
+//  Created by Michael Martell on 10/6/25.
+//
+
+// Ensures that the feb project never interferes or is included in the desktop / mobile build
+EXCLUDED_SOURCE_FILE_NAMES = data-power-sync-web/**

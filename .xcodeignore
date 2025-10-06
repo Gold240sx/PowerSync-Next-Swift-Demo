@@ -1,0 +1,11 @@
+# Exclude documentation\
+documentation/
+*.md
+
+# Exclude example files
+
+# Exclude database migration files and schemas
+SQL/
+
+# Exclude Web Build
+data-power-sync-web
