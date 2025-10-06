@@ -12,7 +12,7 @@ import PowerSync
 let powerSyncSchema = Schema(
     tables: [
         Table(
-            name: "counters",
+            name: "\(AppConfig.DBprefix)counters",
             columns: [
                 .integer("count"),
                 .text("owner_id"),

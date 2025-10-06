@@ -36,7 +36,7 @@ struct ContentView: View {
                                     print("increment")
                                     try await powerSync.execute(
                                         sql: """
-                                            UPDATE counters
+                                            UPDATE "\(AppConfig.DBprefix)counters"
                                             SET count = count + 1
                                             WHERE id = ?
                                             """,
@@ -53,7 +53,7 @@ struct ContentView: View {
                                     print("delete")
                                     try await powerSync.execute(
                                         sql: """
-                                            DELETE FROM counters
+                                            DELETE FROM "\(AppConfig.DBprefix)counters"
                                             WHERE id = ?
                                             """,
                                         parameters: [counter.id]
@@ -73,7 +73,7 @@ struct ContentView: View {
                         do {
                             try await powerSync.execute(
                                 sql: """
-                                INSERT INTO counters(id, count, owner_id, created_at)
+                                INSERT INTO "\(AppConfig.DBprefix)counters"(id, count, owner_id, created_at)
                                 VALUES(uuid(), 0, ?, strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
                                 """,
                                 parameters: [
@@ -141,7 +141,9 @@ struct ContentView: View {
                 // map over all counters
                 for try await results in try powerSync.watch(
                     options: WatchOptions(
-                        sql: "SELECT * FROM counters ORDER BY created_at",
+                        sql: """
+SELECT * FROM "\(AppConfig.DBprefix)counters" ORDER BY created_at
+""",
                         parameters: []
                     ) { cursor in
                         try CounterRecord(

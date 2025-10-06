@@ -21,6 +21,7 @@ enum AppConfig {
     // Development Config
     static let appStage: AppStageEnum = .development
     static let appDebug: Bool = true
+    static let DBprefix: String = "data_power_sync-"
     static let onboardingBypass: BypassEnum = .bypass
     static let paywallBypass: BypassEnum = .bypass
     
