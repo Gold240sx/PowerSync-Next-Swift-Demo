@@ -27,7 +27,7 @@ enum AppConfig {
     // Dev Info
     static let devEmail: String = "240designworks@gmail.com"
     static let devUsername: String = "Gold240sx"
-    static let devPassword: String = "qirbiC-migboq-nuvki3"
+    static let devPassword: String = ENV.devPassword
 
     // Support
     static let supportEmail: String = "support@devspace.app"

@@ -10,6 +10,7 @@ import Foundation
 let ENVMap: [String: String] = [
     "supabaseUrl": "SUPABASE_URL",
     "supabasePublishableKey": "SUPABASE_PUBLISHABLE_KEY",
+    "devPassword": "DEV_PASSWORD"
 //    "supabaseSecretKey": "SUPABASE_SECRET_KEY",
 //    "gitClientId": "GIDClientID",
 //    "devUserId": "DEV_USER_ID",

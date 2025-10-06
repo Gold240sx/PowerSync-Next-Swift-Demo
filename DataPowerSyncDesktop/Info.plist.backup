@@ -6,6 +6,8 @@
 	<string>https://xxxx.supabase.co</string>
 	<key>SUPABASE_PUBLISHABLE_KEY</key>
 	<string>sb_publishable_xxxx</string>
+     <key>DEV_PASSWORD</key>
+    <string>xxxx</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
