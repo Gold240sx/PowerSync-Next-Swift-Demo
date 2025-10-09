@@ -4,7 +4,7 @@ This app is a simple demo between a SwiftUI app and a Next.js app.
 
 The SwiftUI App (for MacOS) uses PowerSync to sync real-time data to Postgres (Supabase)with offline app support.
 
-The Next.js app (for web) uses Drizzle and TRPC to sync data to the same database. It updates the UI based upon event changes in the database.
+The Next.js app (for web) uses Drizzle and TRPC to sync data to the same database. The Next.js server listens to real-time updates from Supabase and broadcasts them to the app, updating the UI based upon event changes in the database.
 
 Both are enhanced for speed and code-simplicity.
 
