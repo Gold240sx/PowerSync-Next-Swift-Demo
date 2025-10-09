@@ -8,6 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@journeyapps/wa-sqlite':
+        specifier: ^1.3.2
+        version: 1.3.2
+      '@powersync/drizzle-driver':
+        specifier: ^0.6.0
+        version: 0.6.0(@powersync/common@1.40.0)(drizzle-orm@0.41.0(gel@2.1.1)(postgres@3.4.7))
+      '@powersync/react':
+        specifier: ^1.8.1
+        version: 1.8.1(@powersync/common@1.40.0)(react@19.2.0)
+      '@powersync/web':
+        specifier: ^1.27.1
+        version: 1.27.1(@journeyapps/wa-sqlite@1.3.2)(@powersync/common@1.40.0)
+      '@supabase/supabase-js':
+        specifier: ^2.74.0
+        version: 2.74.0
       '@t3-oss/env-nextjs':
         specifier: ^0.12.0
         version: 0.12.0(typescript@5.9.3)(zod@3.25.76)
@@ -26,6 +41,9 @@ importers:
       drizzle-orm:
         specifier: ^0.41.0
         version: 0.41.0(gel@2.1.1)(postgres@3.4.7)
+      lucide-react:
+        specifier: ^0.545.0
+        version: 0.545.0(react@19.2.0)
       next:
         specifier: ^15.2.3
         version: 15.5.4(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -549,6 +567,9 @@ packages:
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
     engines: {node: '>=18.0.0'}
 
+  '@journeyapps/wa-sqlite@1.3.2':
+    resolution: {integrity: sha512-zZ0KF01an940DV2jJHHzeTvGlXZ8il/sWnI6a2hH3eV/LHtb5H0c6TB7WursE3c8BvNLifXre3R0mLM5OyNhgw==}
+
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
@@ -618,6 +639,50 @@ packages:
 
   '@petamoriken/float16@3.9.2':
     resolution: {integrity: sha512-VgffxawQde93xKxT3qap3OH+meZf7VaSB5Sqd4Rqc+FP5alWbpOyan/7tRbOAvynjpG3GpdtAuGU/NdhQpmrog==}
+
+  '@powersync/common@1.40.0':
+    resolution: {integrity: sha512-0pJ9UK4Hhunxk0YSWEQ6V0YvjDVVbOv7/GcqmOyZ+vKYzTztnzDA8n+rcbCN1x3NFm69Y5V19yDwuNYoM+MH9A==}
+
+  '@powersync/drizzle-driver@0.6.0':
+    resolution: {integrity: sha512-O1izduCdV6V9QO3ibcDyGkbvbc1fuUmQkh6UxYXClKdIdx+8+cOeWy2O97IR2Iu55XWWI6nZB4MjbZIUGHgeAw==}
+    peerDependencies:
+      '@powersync/common': ^1.38.0
+      drizzle-orm: <1.0.0
+
+  '@powersync/react@1.8.1':
+    resolution: {integrity: sha512-ITrHeXahrsqe1IA6WRoaIGIVYg5gZpDiSNZqjO6jvXoS2hTTYhCShNfn5t38lor9mpooISBjxTFHLy/k7Nh5yQ==}
+    peerDependencies:
+      '@powersync/common': ^1.40.0
+      react: '*'
+
+  '@powersync/web@1.27.1':
+    resolution: {integrity: sha512-O8divcVgBxakBTxW7C6nw57sDGnpZYe9je9kM9C15WSt5jVkzgHQmbZCWjaDz06rVUx8IYUHbcxfneTHJoZKyQ==}
+    hasBin: true
+    peerDependencies:
+      '@journeyapps/wa-sqlite': ^1.3.2
+      '@powersync/common': ^1.40.0
+
+  '@supabase/auth-js@2.74.0':
+    resolution: {integrity: sha512-EJYDxYhBCOS40VJvfQ5zSjo8Ku7JbTICLTcmXt4xHMQZt4IumpRfHg11exXI9uZ6G7fhsQlNgbzDhFN4Ni9NnA==}
+
+  '@supabase/functions-js@2.74.0':
+    resolution: {integrity: sha512-VqWYa981t7xtIFVf7LRb9meklHckbH/tqwaML5P3LgvlaZHpoSPjMCNLcquuLYiJLxnh2rio7IxLh+VlvRvSWw==}
+
+  '@supabase/node-fetch@2.6.15':
+    resolution: {integrity: sha512-1ibVeYUacxWYi9i0cf5efil6adJ9WRyZBLivgjs+AUpewx1F3xPi7gLgaASI2SmIQxPoCEjAsLAzKPgMJVgOUQ==}
+    engines: {node: 4.x || >=6.0.0}
+
+  '@supabase/postgrest-js@2.74.0':
+    resolution: {integrity: sha512-9Ypa2eS0Ib/YQClE+BhDSjx7OKjYEF6LAGjTB8X4HucdboGEwR0LZKctNfw6V0PPIAVjjzZxIlNBXGv0ypIkHw==}
+
+  '@supabase/realtime-js@2.74.0':
+    resolution: {integrity: sha512-K5VqpA4/7RO1u1nyD5ICFKzWKu58bIDcPxHY0aFA7MyWkFd0pzi/XYXeoSsAifnD9p72gPIpgxVXCQZKJg1ktQ==}
+
+  '@supabase/storage-js@2.74.0':
+    resolution: {integrity: sha512-o0cTQdMqHh4ERDLtjUp1/KGPbQoNwKRxUh6f8+KQyjC5DSmiw/r+jgFe/WHh067aW+WU8nA9Ytw9ag7OhzxEkQ==}
+
+  '@supabase/supabase-js@2.74.0':
+    resolution: {integrity: sha512-IEMM/V6gKdP+N/X31KDIczVzghDpiPWFGLNjS8Rus71KvV6y6ueLrrE/JGCHDrU+9pq5copF3iCa0YQh+9Lq9Q==}
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
@@ -770,6 +835,9 @@ packages:
   '@types/node@20.19.19':
     resolution: {integrity: sha512-pb1Uqj5WJP7wrcbLU7Ru4QtA0+3kAXrkutGiD26wUKzSMgNNaPARTUDQmElUXp64kh3cWdou3Q0C7qwwxqSFmg==}
 
+  '@types/phoenix@1.6.6':
+    resolution: {integrity: sha512-PIzZZlEppgrpoT2QgbnDU+MMzuR6BbCjllj0bM70lWoejMeNJAxCchxnv7J3XFkI8MpygtRpzXrIlmWUBclP5A==}
+
   '@types/react-dom@19.2.0':
     resolution: {integrity: sha512-brtBs0MnE9SMx7px208g39lRmC5uHZs96caOJfTjFcYSLHNamvaSMfJNagChVNkup2SdtOxKX1FDBkRSJe1ZAg==}
     peerDependencies:
@@ -777,6 +845,16 @@ packages:
 
   '@types/react@19.2.0':
     resolution: {integrity: sha512-1LOH8xovvsKsCBq1wnT4ntDUdCJKmnEakhsuoUSy6ExlHCkGP2hqnatagYTgFk6oeL0VU31u7SNjunPN+GchtA==}
+
+  '@types/ws@8.18.1':
+    resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
+
+  async-mutex@0.4.1:
+    resolution: {integrity: sha512-WfoBo4E/TbCX1G95XTjbWTE3X2XLG0m1Xbv2cwOtuPdyH9CZvnaA5nCt1ucjaKEgW2A5IF71hxrRhr83Je5xjA==}
+
+  bson@6.10.4:
+    resolution: {integrity: sha512-WIsKqkSC0ABoBJuT1LEX+2HEvNmNKKgnTAyd0fL8qzK4SH2i9NXg+t08YtdZp/V9IZ33cxe3iV4yM0qg8lMQng==}
+    engines: {node: '>=16.20.1'}
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
@@ -790,6 +868,13 @@ packages:
 
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+
+  comlink@4.4.2:
+    resolution: {integrity: sha512-OxGdvBmJuNKSCMO4NTl1L47VRp6xn2wG4F/2hYzB6tiCb709otOxtEYCSvK80PtjODfXXZu8ds+Nw5kVCjqd2g==}
+
+  commander@12.1.0:
+    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
+    engines: {node: '>=18'}
 
   copy-anything@3.0.5:
     resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
@@ -950,6 +1035,9 @@ packages:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
     hasBin: true
 
+  js-logger@1.6.1:
+    resolution: {integrity: sha512-yTgMCPXVjhmg28CuUH8CKjU+cIKL/G+zTu4Fn4lQxs8mRFH/03QTNvEFngcxfg/gRDiQAOoyCKmMTOm9ayOzXA==}
+
   lightningcss-darwin-arm64@1.30.1:
     resolution: {integrity: sha512-c8JK7hyE65X1MHMN+Viq9n11RRC7hgin3HhYKhrMyaXflk5GVplZ60IxyoVtzILeKr+xAJwg6zK6sjTBJ0FKYQ==}
     engines: {node: '>= 12.0.0'}
@@ -1013,6 +1101,11 @@ packages:
   lightningcss@1.30.1:
     resolution: {integrity: sha512-xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==}
     engines: {node: '>= 12.0.0'}
+
+  lucide-react@0.545.0:
+    resolution: {integrity: sha512-7r1/yUuflQDSt4f1bpn5ZAocyIxcTyVyBBChSVtBKn5M+392cPmI5YJMWOJKk/HUWGm5wg83chlAZtCcGbEZtw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
@@ -1139,6 +1232,9 @@ packages:
     resolution: {integrity: sha512-nlGpxf+hv0v7GkWBK2V9spgactGOp0qvfWRxUMjqHyzrt3SgwE48DIv/FhqPHJYLHpgW1opq3nERbz5Anq7n1g==}
     engines: {node: '>=18'}
 
+  tr46@0.0.3:
+    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -1150,10 +1246,28 @@ packages:
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
+  webidl-conversions@3.0.1:
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+
+  whatwg-url@5.0.0:
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
+
   which@4.0.0:
     resolution: {integrity: sha512-GlaYyEb07DPxYCKhKzplCWBJtvxZcZMrL+4UkrTSJHHPyZU4mYYTv3qaOe77H7EODLSSopAUFAc6W8U4yqvscg==}
     engines: {node: ^16.13.0 || >=18.0.0}
     hasBin: true
+
+  ws@8.18.3:
+    resolution: {integrity: sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
 
   yallist@5.0.0:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
@@ -1446,6 +1560,8 @@ snapshots:
     dependencies:
       minipass: 7.1.2
 
+  '@journeyapps/wa-sqlite@1.3.2': {}
+
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1492,6 +1608,71 @@ snapshots:
     optional: true
 
   '@petamoriken/float16@3.9.2': {}
+
+  '@powersync/common@1.40.0':
+    dependencies:
+      js-logger: 1.6.1
+
+  '@powersync/drizzle-driver@0.6.0(@powersync/common@1.40.0)(drizzle-orm@0.41.0(gel@2.1.1)(postgres@3.4.7))':
+    dependencies:
+      '@powersync/common': 1.40.0
+      drizzle-orm: 0.41.0(gel@2.1.1)(postgres@3.4.7)
+
+  '@powersync/react@1.8.1(@powersync/common@1.40.0)(react@19.2.0)':
+    dependencies:
+      '@powersync/common': 1.40.0
+      react: 19.2.0
+
+  '@powersync/web@1.27.1(@journeyapps/wa-sqlite@1.3.2)(@powersync/common@1.40.0)':
+    dependencies:
+      '@journeyapps/wa-sqlite': 1.3.2
+      '@powersync/common': 1.40.0
+      async-mutex: 0.4.1
+      bson: 6.10.4
+      comlink: 4.4.2
+      commander: 12.1.0
+
+  '@supabase/auth-js@2.74.0':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/functions-js@2.74.0':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/node-fetch@2.6.15':
+    dependencies:
+      whatwg-url: 5.0.0
+
+  '@supabase/postgrest-js@2.74.0':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/realtime-js@2.74.0':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+      '@types/phoenix': 1.6.6
+      '@types/ws': 8.18.1
+      ws: 8.18.3
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@supabase/storage-js@2.74.0':
+    dependencies:
+      '@supabase/node-fetch': 2.6.15
+
+  '@supabase/supabase-js@2.74.0':
+    dependencies:
+      '@supabase/auth-js': 2.74.0
+      '@supabase/functions-js': 2.74.0
+      '@supabase/node-fetch': 2.6.15
+      '@supabase/postgrest-js': 2.74.0
+      '@supabase/realtime-js': 2.74.0
+      '@supabase/storage-js': 2.74.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
 
   '@swc/helpers@0.5.15':
     dependencies:
@@ -1610,6 +1791,8 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
+  '@types/phoenix@1.6.6': {}
+
   '@types/react-dom@19.2.0(@types/react@19.2.0)':
     dependencies:
       '@types/react': 19.2.0
@@ -1618,6 +1801,16 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
+  '@types/ws@8.18.1':
+    dependencies:
+      '@types/node': 20.19.19
+
+  async-mutex@0.4.1:
+    dependencies:
+      tslib: 2.8.1
+
+  bson@6.10.4: {}
+
   buffer-from@1.1.2: {}
 
   caniuse-lite@1.0.30001748: {}
@@ -1625,6 +1818,10 @@ snapshots:
   chownr@3.0.0: {}
 
   client-only@0.0.1: {}
+
+  comlink@4.4.2: {}
+
+  commander@12.1.0: {}
 
   copy-anything@3.0.5:
     dependencies:
@@ -1741,6 +1938,8 @@ snapshots:
 
   jiti@2.6.1: {}
 
+  js-logger@1.6.1: {}
+
   lightningcss-darwin-arm64@1.30.1:
     optional: true
 
@@ -1785,6 +1984,10 @@ snapshots:
       lightningcss-linux-x64-musl: 1.30.1
       lightningcss-win32-arm64-msvc: 1.30.1
       lightningcss-win32-x64-msvc: 1.30.1
+
+  lucide-react@0.545.0(react@19.2.0):
+    dependencies:
+      react: 19.2.0
 
   magic-string@0.30.19:
     dependencies:
@@ -1916,15 +2119,26 @@ snapshots:
       minizlib: 3.1.0
       yallist: 5.0.0
 
+  tr46@0.0.3: {}
+
   tslib@2.8.1: {}
 
   typescript@5.9.3: {}
 
   undici-types@6.21.0: {}
 
+  webidl-conversions@3.0.1: {}
+
+  whatwg-url@5.0.0:
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
+
   which@4.0.0:
     dependencies:
       isexe: 3.1.1
+
+  ws@8.18.3: {}
 
   yallist@5.0.0: {}
 
