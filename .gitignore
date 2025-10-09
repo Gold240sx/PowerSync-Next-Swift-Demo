@@ -1,6 +1,8 @@
-.env
+
+.DS_Store
 
 // -- ENV VARIABLES --
+.env
 
 // MOBILE
 DataPowerSyncDesktop/.env
